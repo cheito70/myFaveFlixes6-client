@@ -38497,7 +38497,6 @@ class MovieCard extends (0, _reactDefault.default).Component {
         const { movie , onMovieClick  } = this.props;
         //return <div className="movie-card" onClick={() => onMovieClick(movie)}>{movie.Title}</div>;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-            className: "card",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
                     variant: "top",
@@ -38508,7 +38507,6 @@ class MovieCard extends (0, _reactDefault.default).Component {
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                    className: "cardBody",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
                             children: movie.Title
