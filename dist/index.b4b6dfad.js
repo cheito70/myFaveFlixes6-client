@@ -38508,6 +38508,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
+                    className: "cardBody",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
                             children: movie.Title

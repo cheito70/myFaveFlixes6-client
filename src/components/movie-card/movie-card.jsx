@@ -11,7 +11,7 @@ export class MovieCard extends React.Component {
         return (
             <Card className="card">
                 <Card.Img variant="top" src={movie.ImagePath} />
-                <Card.Body>
+                <Card.Body className="cardBody">
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
                     <Button onClick={() => onMovieClick(movie)} vaiant="link">Open</Button>
