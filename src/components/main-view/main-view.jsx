@@ -74,8 +74,6 @@ toRegister(registered) {
         if(movies.length === 0) return <div className="main-view" />;
     
         return (
-            
-            
 
             <Row className="main-view justify-content-md-center">
             {selectedMovie  
