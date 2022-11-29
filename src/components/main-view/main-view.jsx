@@ -75,7 +75,8 @@ toRegister(registered) {
     
         return (
             
-        
+            
+
             <Row className="main-view justify-content-md-center">
             {selectedMovie  
                 ? (
@@ -98,10 +99,10 @@ toRegister(registered) {
                      ))
                     }
                  </Row>
+
             
               );
     }
 
 }
 
-//export default MainView;
