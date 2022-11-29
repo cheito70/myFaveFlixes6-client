@@ -27274,7 +27274,8 @@ $parcel$ReactRefreshHelpers$f7a6.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
+parcelHelpers.export(exports, "MainView", ()=>MainView) //export default MainView;
+;
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -27368,6 +27369,7 @@ class MainView extends (0, _reactDefault.default).Component {
             }, this) : movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 3,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        className: "movieCard",
                         movie: movie,
                         onMovieClick: (newSelectedMovie)=>{
                             this.setSelectedMovie(newSelectedMovie);
@@ -27389,7 +27391,6 @@ class MainView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
-exports.default = MainView;
 
   $parcel$ReactRefreshHelpers$f7a6.postlude(module);
 } finally {

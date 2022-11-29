@@ -1,11 +1,12 @@
 *{
     box-sizing: border-box;
-    background: #c5d7fa;
+    
   }
   .main-view{
     
     width: 100%;
     height: 100vh;
+    background: #c5d7fa;
   }
   
   .bg-navColor{
@@ -19,6 +20,10 @@
     margin-top: 50px;
     background:white;
     color: black;
+  }
+
+  .movieCard {
+    background: #fff;
   }
   
   .regButton {

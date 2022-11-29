@@ -89,7 +89,7 @@ toRegister(registered) {
                )
                 : movies.map(movie => (
                         <Col md={3}>
-                        <MovieCard
+                        <MovieCard className="movieCard"
                      key={movie._id}
                      movie={movie}
                      onMovieClick={(newSelectedMovie) => {
@@ -104,4 +104,4 @@ toRegister(registered) {
 
 }
 
-export default MainView;
+//export default MainView;
