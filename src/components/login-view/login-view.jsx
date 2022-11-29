@@ -25,12 +25,12 @@ export function LoginView(props) {
     return (
 
         
-<Container className="login-container fluid">
-    <Row> 
+<Container fluid className="login-container">
+    <Row className="login-card"> 
         <Col></Col>
             <Col>
                 <CardGroup>
-                    <Card className="login-card">
+                    <Card>
                         <Card.Body>
                             <Card.Title>Login Here</Card.Title>
                             <Form className="login-border">

@@ -42,6 +42,11 @@
   background: #c5d7fa;
 }
 
+.login-card {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
 .bg-navColor {
   background: #2c68d6;
 }
