@@ -1,7 +1,6 @@
 import React, { useState }  from 'react';
 import {Form, Col, Row, Container, Card, CardGroup, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-
 import axios from 'axios';
 
 import './login-view.scss';
@@ -10,8 +9,6 @@ export function LoginView(props) {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
 
-    import axios from 'axios';
-    
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
