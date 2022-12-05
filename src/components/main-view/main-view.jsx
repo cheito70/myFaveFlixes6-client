@@ -1,14 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 
+import PropTypes from 'prop-types';
+
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
+//Views
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+//import { NavBar } from '../navbar/navbar';
 
+//Styles
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
-
-
 import './main-view.scss';
 
 export class MainView extends React.Component {
