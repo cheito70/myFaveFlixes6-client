@@ -24,15 +24,13 @@ export class MainView extends React.Component {
     }
 
     componentDidMount(){
-        axios.get('https://myfaveflixes.herokuapp.com/movies')
-        .then(response => {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
             this.setState({
-                movies: response.data
+                user: localStorage.getItem('user')
             });
-        })
-        .catch(error =>{
-            console.log(error);
-        });
+            this.getMovies(accessToken);
+        }
     }
 
 setSelectedMovie(movie) {
