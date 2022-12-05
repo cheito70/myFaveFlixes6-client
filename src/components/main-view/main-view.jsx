@@ -51,6 +51,14 @@ onLoggedIn(authData) {
     this.getMovies(authData.token);
 }
 
+onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+        user: null
+    });
+}
+
 getMovies(token) {
     axios.get ('https://myfaveflixes.herokuapp.com/movies', {
         headers: { Authorization: `Bearer ${token}` }
@@ -75,6 +83,9 @@ toRegister(registered) {
 
     render() {
         const { movies, selectedMovie, user, registered } = this.state;
+        
+        //Logout button
+        <button onClick={() => { this.onLoggedOut()}}>Logout</button>
 
         /* If there is no user, the LoginView is rendered. If there is a user logged in, 
         the user details are *passed as a prop to the LoginView*/
