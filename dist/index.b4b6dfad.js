@@ -27147,10 +27147,14 @@ class MainView extends (0, _reactDefault.default).Component {
         });
     }
     //Function updates 'user' property in state to particular user if logged in properly
-    onLoggedIn(user) {
+    onLoggedIn(authData) {
+        console.log(authData);
         this.setState({
-            user
+            user: authData.user.Username
         });
+        localStorage.setItem("token", authData.token);
+        localStorage.setItem("user", authData.user.Username);
+        this.getMovies(authData.token);
     }
     toRegister(registered) {
         this.setState({
@@ -27162,7 +27166,7 @@ class MainView extends (0, _reactDefault.default).Component {
         /* If there is no user, the LoginView is rendered. If there is a user logged in, 
         the user details are *passed as a prop to the LoginView*/ if (!registered) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _registrationView.RegistrationView), {}, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 61,
+            lineNumber: 68,
             columnNumber: 33
         }, this);
         // If there is no user, the LoginView is rendered.
@@ -27172,7 +27176,7 @@ class MainView extends (0, _reactDefault.default).Component {
             toRegister: (registered)=>this.toRegister(registered)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 67,
+            lineNumber: 74,
             columnNumber: 17
         }, this);
         //if ( selectedMovie ) return <MovieView movie={selectedMovie} />;
@@ -27180,7 +27184,7 @@ class MainView extends (0, _reactDefault.default).Component {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 74,
+            lineNumber: 81,
             columnNumber: 40
         }, this);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27194,12 +27198,12 @@ class MainView extends (0, _reactDefault.default).Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 82,
+                    lineNumber: 89,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 81,
+                lineNumber: 88,
                 columnNumber: 19
             }, this) : movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     md: 3,
@@ -27211,17 +27215,17 @@ class MainView extends (0, _reactDefault.default).Component {
                         }
                     }, movie._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 91,
+                        lineNumber: 98,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 90,
+                    lineNumber: 97,
                     columnNumber: 25
                 }, this))
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 78,
+            lineNumber: 85,
             columnNumber: 13
         }, this);
     }
