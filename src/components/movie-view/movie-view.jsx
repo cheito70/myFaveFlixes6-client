@@ -10,6 +10,9 @@ export class MovieView extends React.Component {
     render() {
         const { movie, onBackClick } = this.props;
 
+        //Logout button
+        <button onClick={() => { this.onLoggedOut()}}>Logout</button>
+
         return (            
             <div md={8} className="movie-view">
                 <Row>
