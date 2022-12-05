@@ -88,9 +88,7 @@ toRegister(registered) {
 
     render() {
         const { movies, selectedMovie, user, registered } = this.state;
-        
-        //Logout button
-        <button onClick={() => { this.onLoggedOut()}}>Logout</button>
+
 
         /* If there is no user, the LoginView is rendered. If there is a user logged in, 
         the user details are *passed as a prop to the LoginView*/
