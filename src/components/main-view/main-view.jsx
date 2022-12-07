@@ -211,7 +211,7 @@ handleFavorite = (movieId, action) => {
              />
 
          <Route
-             path="/movies/:movieId"
+             path="/movies/:movieID"
              render={({ match, history }) => {
                // console.log("movies route user", user);
                if (!user)
