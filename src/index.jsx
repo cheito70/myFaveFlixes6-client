@@ -1,5 +1,6 @@
 import React from 'react';
-import { createRoot } from "react-dom/client";
+import ReactDOM from 'react-dom';
+//import { createRoot } from "react-dom/client";
 import { MainView } from './components/main-view/main-view';
 import { Container, Row } from 'react-bootstrap';
 
@@ -17,8 +18,8 @@ class MyFlixApplication extends React.Component {
 
 // Finds the root of your app
 const container = document.getElementsByClassName('app-container')[0];
-const root = createRoot(container);
+//const root = createRoot(container);
 
 // Tells React to render your app in the root DOM element
-//ReactDOM.render(React.createElement(MyFlixApplication), container);
-root.render(React.createElement(MyFlixApplication));
+ReactDOM.render(React.createElement(MyFlixApplication), container);
+//root.render(React.createElement(MyFlixApplication));
