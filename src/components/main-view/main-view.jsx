@@ -90,7 +90,8 @@ onRegistration(register) {
         const { movies, selectedMovie, user } = this.state;
         return (
             <Router>
-              <Row className="main-view justify-content-md-center">
+             <Routes>
+               <Row className="main-view justify-content-md-center">
                  <Route
                   exact
                   path="/"
@@ -161,6 +162,7 @@ onRegistration(register) {
                  }}                    
              />
             </Row>
+            </Routes>
         </Router>
 
             
