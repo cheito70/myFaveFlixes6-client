@@ -24,7 +24,7 @@ export class MainView extends React.Component {
             movies: [],
             selectedMovie: null,
             user: null,
-            register: null
+            registered: null
         };
     }
 
@@ -80,9 +80,9 @@ getMovies(token) {
 }
 
 
-onRegistration(register) {
+onRegistration(registered) {
     this.setState({
-        register
+        registered
     });
 }
 
@@ -90,6 +90,7 @@ onRegistration(register) {
         const { movies, selectedMovie, user } = this.state;
         return (
             <Router>
+             <NavBar user={user} />
                <Row className="main-view justify-content-md-center">
                <Routes>
                  <Route
