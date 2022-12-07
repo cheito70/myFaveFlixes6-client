@@ -94,7 +94,7 @@ onRegistration(register) {
                <Routes>
                  <Route
                   exact
-                  path="/"
+                  path='/'
                   render={() => {
                     if (!user)
                      return (
@@ -105,7 +105,7 @@ onRegistration(register) {
                          />
                         </Col>
                      );
-                     if (movies.length === 0) return <div className="main-view" />;
+                     if (movies.length === 0) return <div className='main-view' />;
                      return movies.map((m) => (
                         <Col md={8} key={m._id}>
                          <MovieCard movie={m} />
@@ -115,12 +115,12 @@ onRegistration(register) {
                   />
 
                 <Route
-                 path="/register"
+                 path='/register'
                  render={() => {
                     console.log("Registering User");
-                    if (user) return <Redirect to="/" />;
+                    if (user) return <Redirect to='/' />;
                     return (
-                        <Col>
+                        <Col lg={8}>
                          <RegistrationView
                            onLoggedIn={(user) => this.onLoggedIn(user)}
                            />
