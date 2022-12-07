@@ -6,10 +6,13 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 
 //Views
-import { RegistrationView } from '../registration-view/registration-view';
-import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
+import RegistrationView from '../registration-view/registration-view';
+import LoginView from '../login-view/login-view';
+import MovieCard from '../movie-card/movie-card';
+import MovieView from '../movie-view/movie-view';
+import ProfileView from '../profile-view/profile-view';
+import DirectorView from "../director-view/director-view";
+import GenreView from "../genre-view/genre-view";
 import { NavBar } from '../navbar/navbar';
 
 //Styles
@@ -96,7 +99,7 @@ handleFavorite = (movieId, action) => {
         if (action === 'add') {
             this.setState({ favoriteMovies: [...favoriteMovies, movieId] });
             axios.put(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
+                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieID}`,
                 {},
                 {
                     headers: { Authorization: `Bearer ${accessToken}` },
@@ -112,10 +115,10 @@ handleFavorite = (movieId, action) => {
 
         } else if (action === 'remove') {
             this.setState({
-                favoriteMovies: favoriteMovies.filter((id) => id !== movieId),
+                favoriteMovies: favoriteMovies.filter((id) => id !== movieID),
             });
             axios.delete(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
+                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieID}`,
                 {
                     headers: { Authorization: `Bearer ${accessToken}` },
                 }

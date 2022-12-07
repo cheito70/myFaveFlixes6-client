@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Row, Button } from 'react-bootstrap';
+import { Col, Row, Button, Image } from 'react-bootstrap';
 
 import './movie-view.scss';
 
@@ -18,7 +18,7 @@ export class MovieView extends React.Component {
                 <Row>
                     <Col>
                 <div className="movie-poster">
-                    <img crossorigin="anonymous" src={movie.ImagePath} alt="movie imgae" rounded />
+                    <Image crossorigin="anonymous" src={movie.ImagePath} alt="movie image" rounded />
                 </div>
                     </Col>
                 </Row>
@@ -38,25 +38,44 @@ export class MovieView extends React.Component {
                 </div>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
-                <div className="movie-genre">
-                    <span className="label">Genre: </span>
-                    <span className="value">{movie.Genre.Name}</span>
-                </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                <div className="movie-director">
-                    <span className="label">Director: </span>
-                    <span className="value">{movie.Director.Name}</span>
-                </div>
-                    </Col>
-                </Row>
+                <Row className="movie-genre">
                 <Col>
-                <Button onClick={() => { onBackClick(null); }}>Back</Button>        
+                <div className="font-weight-bold">Genre: </div>
+                <div className="mb-2">
+                    <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>        
+                </div>
+                    </Col>
+                </Row>
+
+
+                <Row className="movie-director">
+                <Col>
+                <div className="font-weight-bold">Director: </div>
+                <div className="mb-2">
+                    <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link>        
+                </div>
+                    </Col>
+                </Row>
+
+                <Col>
+                <Button
+                    className="my-4 ml-2"
+                    variant="outline-primary"
+                    onClick={() => handleFavorite(movie._id, "add")}
+                >
+                    Add to favorite ❤ Movies
+                </Button>
+                <Button
+                    className="mt-2 mr-2 mb-2"
+                    variant="warning"
+                    onClick={() => {
+                    onBackClick();
+                    }}
+                >
+                    Back
+                </Button>
                 </Col>
+                
             </div>
         );
     }
