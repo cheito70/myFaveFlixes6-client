@@ -10,7 +10,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-//import { NavBar } from '../navbar/navbar';
+import { NavBar } from '../navbar/navbar';
 
 //Styles
 import { Navbar, Nav, Container, Row, Col} from 'react-bootstrap';
@@ -24,7 +24,7 @@ export class MainView extends React.Component {
             movies: [],
             selectedMovie: null,
             user: null,
-            registered: true
+            register: null
         };
     }
 
@@ -80,57 +80,90 @@ getMovies(token) {
 }
 
 
-toRegister(registered) {
+onRegistration(register) {
     this.setState({
-        registered
+        register
     });
 }
 
     render() {
-        const { movies, selectedMovie, user, registered } = this.state;
-
-
-        /* If there is no user, the LoginView is rendered. If there is a user logged in, 
-        the user details are *passed as a prop to the LoginView*/
-        if (!registered) return <RegistrationView />;
-
-        // If there is no user, the LoginView is rendered.
-        //If user us logged in, user details are passed as a prop to lgin view
-        if (!user)
-            return (
-                <LoginView
-                onLoggedIn={(user) => this.onLoggedIn(user)}
-                toRegister={(registered) => this.toRegister(registered)}
-                />
-            );
-        //if ( selectedMovie ) return <MovieView movie={selectedMovie} />;
-            
-        if(movies.length === 0) return <div className="main-view" />;
-    
+        const { movies, selectedMovie, user } = this.state;
         return (
+            <Router>
+                <NavBar user={user} />
 
-            <Row className="main-view justify-content-md-center">
-            {selectedMovie  
-                ? (
-                  <Col md={8}> 
-                    <MovieView
-                   movie={selectedMovie}
-                   onBackClick={newSelectedMovie => {
-                     this.setSelectedMovie(newSelectedMovie);
-                   }}/>
-                   </Col>
-               )
-                : movies.map(movie => (
-                        <Col md={3}>
-                        <MovieCard className="movieCard"
-                     key={movie._id}
-                     movie={movie}
-                     onMovieClick={(newSelectedMovie) => {
-                       this.setSelectedMovie(newSelectedMovie); }}/>
+                <Row className="main-view justify-content-md-center">
+                 <Route
+                  exact
+                  path="/"
+                  render={() => {
+                    if (!user)
+                     return (
+                        <Col>
+                        <LoginView
+                         md={4}
+                         onLoggedIn={(user) => this.onLoggedIn(user)}
+                         />
                         </Col>
-                     ))
-                    }
-                 </Row>
+                     );
+                     if (movies.length === 0) return <div className="main-view" />;
+                     return movies.map((m) => (
+                        <Col md={8} key={m._id}>
+                         <MovieCard movie={m} />
+                        </Col>
+                     ));
+                  }}
+                  />
+
+                <Route
+                 path="/register"
+                 render={() => {
+                    console.log("Registering User");
+                    if (user) return <Redirect to="/" />;
+                    return (
+                        <Col>
+                         <RegistrationView
+                           onLoggedIn={(user) => this.onLoggedIn(user)}
+                           />
+                        </Col>
+                    );
+                 }}
+                 />
+            <Route
+             path="/home"
+             render={() => {
+                console.log("Selecting Movie");
+                if (user) return <Redirect to="/" />;
+                return (
+                    <Row className="main-view justify-content-md-center">
+                      {selectedMovie ? (
+                        <Col md={8}>
+                         <MovieView
+                           movie={selectedMovie}
+                           onBackClick={(newSelectedMovie) => {
+                            this.setSelectedMovie(newSelectedMovie);
+                           }}
+                           />
+                        </Col>
+                      ) : (
+                        movies.map((movie) => (
+                           <Col md={4}>
+                            <MovieCard
+                             key={movie._id}
+                             movie={movie}
+                             onMovieClick={(newSelectedMovie) => {
+                                this.setSelectedMovie(newSelectedMovie);
+                             }}
+                             />
+                           </Col> 
+                        ))
+                      )}
+                    </Row>
+                    );
+                 }}                    
+             />
+            </Row>
+        </Router>
 
             
               );
