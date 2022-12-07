@@ -82,7 +82,7 @@ export function LoginView(props) {
                                     type="text" 
                                     placeholder="Username Here" 
                                     value={username}
-                                    onChange={e => setUsername(e.target.value)} />
+                                    onChange={(e) => setUsername(e.target.value)} />
                                     {/* validation errors display here*/}
                                     {usernameErr && <p className="alert alert-danger">{usernameErr}</p>}
                                 </Form.Group>
