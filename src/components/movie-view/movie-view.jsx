@@ -4,21 +4,21 @@ import { Col, Row, Button } from 'react-bootstrap';
 
 import './movie-view.scss';
 
+import { Link } from 'react-router-dom';
+
 
 export class MovieView extends React.Component {
 
     render() {
         const { movie, onBackClick } = this.props;
 
-        //Logout button
-        <button onClick={() => { this.onLoggedOut()}}>Logout</button>
 
         return (            
             <div md={8} className="movie-view">
                 <Row>
                     <Col>
                 <div className="movie-poster">
-                    <img crossorigin="anonymous" src={movie.ImagePath} />
+                    <img crossorigin="anonymous" src={movie.ImagePath} alt="movie imgae" rounded />
                 </div>
                     </Col>
                 </Row>

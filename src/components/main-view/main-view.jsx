@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 
 //Views
 import { RegistrationView } from '../registration-view/registration-view';
@@ -89,9 +89,7 @@ onRegistration(register) {
     render() {
         const { movies, selectedMovie, user } = this.state;
         return (
-            <Router>
-                <NavBar user={user} />
-
+            <Routes>
                 <Row className="main-view justify-content-md-center">
                  <Route
                   exact
@@ -163,7 +161,7 @@ onRegistration(register) {
                  }}                    
              />
             </Row>
-        </Router>
+        </Routes>
 
             
               );
