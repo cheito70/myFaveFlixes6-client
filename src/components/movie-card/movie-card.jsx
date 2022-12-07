@@ -18,13 +18,22 @@ export default class MovieCard extends React.Component {
                 <Card.Body>
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
-                    <Button onClick={() => onMovieClick(movie)} vaiant="link">Open</Button>
+                    <Link to={`/movies/${movie._id}`}>
+                        <Button variant="link">Open</Button>
+                    </Link>
                 </Card.Body>
 
                 <Card.Footer class="card-footer" >
                     <Link to={`/movies/${movie._id}`}>
                         <Button class="open-button" variant="success">Open</Button>
                     </Link>
+                    <Link to={`/directors/${movie.Director.Name}`}>
+                        <Button variant="link">Director</Button>
+                    </Link>
+                    <Link to={`/genres/${movie.Genre.Name}`}>
+                        <Button variant="link">Genre</Button>
+                    </Link>
+
                 </Card.Footer>
 
             </Card>
@@ -38,5 +47,5 @@ MovieCard.propTypes = {
         Description: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
-       // onMovieClick: PropTypes.func.isRequired
+       onMovieClick: PropTypes.func.isRequired
 };
