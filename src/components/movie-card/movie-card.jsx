@@ -7,7 +7,7 @@ import "./movie-card.scss";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Link, Route } from "react-router-dom";
 
-export default class MovieCard extends React.Component {
+export class MovieCard extends React.Component {
     render() {
         const { movie, setSelectedMovie } = this.props;
 
