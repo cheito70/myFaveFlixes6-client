@@ -27211,9 +27211,9 @@ class MainView extends (0, _reactDefault.default).Component {
     render() {
         const { movies , selectedMovie , user  } = this.state;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                    className: "main-view justify-content-md-center",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "main-view justify-content-md-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             exact: true,
@@ -27300,7 +27300,7 @@ class MainView extends (0, _reactDefault.default).Component {
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 93,
-                columnNumber: 14
+                columnNumber: 16
             }, this)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
