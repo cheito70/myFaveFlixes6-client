@@ -134,7 +134,7 @@ handleFavorite = (movieId, action) => {
 };
 
     render() {
-        const { movies, selectedMovie, user, favoriteMovies } = this.state;
+        const { movies, user, favoriteMovies } = this.state;
         return (
             <Router>
              <NavBar user={user} />
@@ -143,6 +143,7 @@ handleFavorite = (movieId, action) => {
                  <Route
                   exact
                   path='/'
+                  element={<MainView />}
                   render={() => {
                     if (!user)
                      return (
