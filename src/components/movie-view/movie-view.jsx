@@ -63,7 +63,7 @@ export class MovieView extends React.Component {
                     variant="outline-primary"
                     onClick={() => handleFavorite(movie._id, "add")}
                 >
-                    Add to favorite ❤ Movies
+                    Add to Favorite ❤ Movies
                 </Button>
                 <Button
                     className="mt-2 mr-2 mb-2"

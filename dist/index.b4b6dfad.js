@@ -43736,7 +43736,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                             className: "my-4 ml-2",
                             variant: "outline-primary",
                             onClick: ()=>handleFavorite(movie._id, "add"),
-                            children: "Add to favorite ❤ Movies"
+                            children: "Add to Favorite ❤ Movies"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 61,
