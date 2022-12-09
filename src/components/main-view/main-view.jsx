@@ -178,16 +178,18 @@ handleFavorite = (movieId, action) => {
                  />
 
              <Route
-                 path={`/users/:username`}
+                 path={`/users/${user}`}
                  render={({ history }) => {
                    if (!user) return <Redirect to="/" />;
                    return (
                      <Col>
                        <ProfileView
+                         user={user}
                          movies={movies}
                          goBack={history.goBack}
                          favoriteMovies={favoriteMovies || []}
                          handleFavorite={this.handleFavorite}
+                         onBackClick={() => history.goBack()}
                        />
                      </Col>
                    );
@@ -233,7 +235,7 @@ handleFavorite = (movieId, action) => {
            />     
 
            <Route
-           path="/directors/:directorName"
+           path="/directors/:name"
            render={({ match, history }) => {
              console.log("movies route director", user);
              if (!user)
@@ -246,9 +248,9 @@ handleFavorite = (movieId, action) => {
              return (
                <Col md={8}>
                  <DirectorView
-                   movie={movies.find(
-                     (m) => m.Director.Name === match.params.directorName
-                   )}
+                   director={movies.find(
+                     (m) => m.Director.Name === match.params.name
+                   ).Director }
                    onBackClick={() => history.goBack()}
                  />
                </Col>
@@ -257,7 +259,7 @@ handleFavorite = (movieId, action) => {
          />
          
          <Route
-            path="/genres/:genreName"
+            path="/genres/:name"
             render={({ match, history }) => {
               console.log(
                 movies.find((m) => m.Genre.Name === match.params.genreName)
@@ -273,49 +275,15 @@ handleFavorite = (movieId, action) => {
               return (
                 <Col md={8}>
                   <GenreView
-                    movie={movies.find(
-                      (m) => m.Genre.Name === match.params.genreName
-                    )}
+                    genre={
+                      movies.find((m) => m.Genre.Name === match.params.name
+                    ).Genre }
                     onBackClick={() => history.goBack()}
                   />
                 </Col>
               );
             }}
           />
-     
-            <Route
-             path="/home"
-             render={() => {
-                console.log("Selecting Movie");
-                if (user) return <Redirect to="/" />;
-                return (
-                    <Row className="main-view justify-content-md-center">
-                      {selectedMovie ? (
-                        <Col md={8}>
-                         <MovieView
-                           movie={selectedMovie}
-                           onBackClick={(newSelectedMovie) => {
-                            this.setSelectedMovie(newSelectedMovie);
-                           }}
-                           />
-                        </Col>
-                      ) : (
-                        movies.map((movie) => (
-                           <Col md={4}>
-                            <MovieCard
-                             key={movie._id}
-                             movie={movie}
-                             onMovieClick={(newSelectedMovie) => {
-                                this.setSelectedMovie(newSelectedMovie);
-                             }}
-                             />
-                           </Col> 
-                        ))
-                      )}
-                    </Row>
-                    );
-                 }}                    
-             />
              
             </Row>            
         </Router>            
