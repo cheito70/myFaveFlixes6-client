@@ -118,7 +118,7 @@ handleFavorite = (movieId, action) => {
                 favoriteMovies: favoriteMovies.filter((id) => id !== movieID),
             });
             axios.delete(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieID}`,
+                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
                 {
                     headers: { Authorization: `Bearer ${accessToken}` },
                 }
@@ -212,7 +212,7 @@ handleFavorite = (movieId, action) => {
              />
 
          <Route
-             path="/movies/:movieID"
+             path="/movies/:movieId"
              render={({ match, history }) => {
                // console.log("movies route user", user);
                if (!user)
