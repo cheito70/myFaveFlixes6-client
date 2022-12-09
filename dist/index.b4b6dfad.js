@@ -42197,7 +42197,7 @@ function NavBar() {
         else return false;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
-        className: "bright-bg w-100",
+        className: "dark-bg w-100",
         variant: "dark",
         expand: "lg",
         children: [
