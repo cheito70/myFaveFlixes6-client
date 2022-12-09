@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 
 //Views
-import RegistrationView from '../registration-view/registration-view';
-import LoginView from '../login-view/login-view';
-import MovieCard from '../movie-card/movie-card';
-import MovieView from '../movie-view/movie-view';
-import ProfileView from '../profile-view/profile-view';
-import DirectorView from "../director-view/director-view";
-import GenreView from "../genre-view/genre-view";
+import { RegistrationView } from '../registration-view/registration-view';
+import { LoginView } from '../login-view/login-view';
+import { MovieCard } from '../movie-card/movie-card';
+import{ MovieView } from '../movie-view/movie-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { DirectorView } from "../director-view/director-view";
+import { GenreView } from "../genre-view/genre-view";
 import { NavBar } from '../navbar/navbar';
 
 //Styles
@@ -143,7 +143,6 @@ handleFavorite = (movieId, action) => {
                  <Route
                   exact
                   path='/'
-                  element={<MainView />}
                   render={() => {
                     if (!user)
                      return (
