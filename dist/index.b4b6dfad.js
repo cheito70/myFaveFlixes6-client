@@ -42056,14 +42056,14 @@ class DirectorView extends (0, _reactDefault.default).Component {
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                         className: "dir-view-title",
-                        children: movie.Director.Name
+                        children: director.Name
                     }, void 0, false, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 17,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
-                        children: movie.Director.Bio
+                        children: director.Bio
                     }, void 0, false, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 18,
@@ -42072,7 +42072,7 @@ class DirectorView extends (0, _reactDefault.default).Component {
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                         children: [
                             "Birth: ",
-                            movie.Director.Birth
+                            director.Birth
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
