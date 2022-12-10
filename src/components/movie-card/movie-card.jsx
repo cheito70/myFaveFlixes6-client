@@ -18,9 +18,6 @@ export class MovieCard extends React.Component {
                 <Card.Body>
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
-                    <Link to={`/movies/${movie._id}`}>
-                        <Button variant="link">Open</Button>
-                    </Link>
                 </Card.Body>
 
                 <Card.Footer class="card-footer" >
@@ -28,10 +25,10 @@ export class MovieCard extends React.Component {
                         <Button class="open-button" variant="success">Open</Button>
                     </Link>
                     <Link to={`/directors/${movie.Director.Name}`}>
-                        <Button variant="link">Director</Button>
+                        <Button class="director-button" variant="link">Director</Button>
                     </Link>
                     <Link to={`/genres/${movie.Genre.Name}`}>
-                        <Button variant="link">Genre</Button>
+                        <Button class="genre-button" variant="link">Genre</Button>
                     </Link>
 
                 </Card.Footer>

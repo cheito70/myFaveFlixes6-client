@@ -41142,21 +41142,6 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             fileName: "src/components/movie-card/movie-card.jsx",
                             lineNumber: 20,
                             columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/movies/${movie._id}`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                variant: "link",
-                                children: "Open"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 22,
-                                columnNumber: 25
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 21,
-                            columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
@@ -41175,6 +41160,22 @@ class MovieCard extends (0, _reactDefault.default).Component {
                                 children: "Open"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
+                                lineNumber: 25,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 24,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/directors/${movie.Director.Name}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                class: "director-button",
+                                variant: "link",
+                                children: "Director"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 28,
                                 columnNumber: 25
                             }, this)
@@ -41184,10 +41185,11 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/directors/${movie.Director.Name}`,
+                            to: `/genres/${movie.Genre.Name}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                class: "genre-button",
                                 variant: "link",
-                                children: "Director"
+                                children: "Genre"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 31,
@@ -41197,26 +41199,11 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             fileName: "src/components/movie-card/movie-card.jsx",
                             lineNumber: 30,
                             columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/genres/${movie.Genre.Name}`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                variant: "link",
-                                children: "Genre"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 34,
-                                columnNumber: 25
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 33,
-                            columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 26,
+                    lineNumber: 23,
                     columnNumber: 17
                 }, this)
             ]
@@ -42240,6 +42227,7 @@ function NavBar() {
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
         className: "dark-bg w-100",
+        bg: "dark",
         variant: "dark",
         expand: "lg",
         children: [
