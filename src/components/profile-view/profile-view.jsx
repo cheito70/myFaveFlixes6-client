@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 //Bootstrap imports
 import {Form, Button, Container, Row, Col, Card, Figure } from 'react-bootstrap';
 
-export default class ProfileView extends React.Component {
+export class ProfileView extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -271,7 +271,7 @@ export default class ProfileView extends React.Component {
               </Col>
             </Row>
             <Row>
-              {myFavoritesMovies.map((movie) => (
+              {myFavoriteMovies.map((movie) => (
                 <Col key={movie._id} className="fav-movie">
                   <Figure>
                     <Link to={`/movies/${movie._id}`}>
