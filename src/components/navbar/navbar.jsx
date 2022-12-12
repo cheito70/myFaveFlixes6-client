@@ -25,7 +25,7 @@ export function NavBar() {
 
     return (
         <Navbar className="dark-bg w-100" bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#">My Fave Flixes!!</Navbar.Brand>
+      <Navbar.Brand href="#">My Fave Flixes</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">

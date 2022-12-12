@@ -99,7 +99,7 @@ handleFavorite = (movieId, action) => {
         if (action === 'add') {
             this.setState({ favoriteMovies: [...favoriteMovies, movieId] });
             axios.put(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieID}`,
+                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
                 {},
                 {
                     headers: { Authorization: `Bearer ${accessToken}` },
@@ -115,7 +115,7 @@ handleFavorite = (movieId, action) => {
 
         } else if (action === 'remove') {
             this.setState({
-                favoriteMovies: favoriteMovies.filter((id) => id !== movieID),
+                favoriteMovies: favoriteMovies.filter((id) => id !== movieId),
             });
             axios.delete(
                 `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,

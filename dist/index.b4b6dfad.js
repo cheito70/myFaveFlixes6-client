@@ -27205,7 +27205,7 @@ class MainView extends (0, _reactDefault.default).Component {
                         movieId
                     ]
                 });
-                (0, _axiosDefault.default).put(`https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieID}`, {}, {
+                (0, _axiosDefault.default).put(`https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`, {}, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }
@@ -27217,7 +27217,7 @@ class MainView extends (0, _reactDefault.default).Component {
                 });
             } else if (action === "remove") {
                 this.setState({
-                    favoriteMovies: favoriteMovies.filter((id)=>id !== movieID)
+                    favoriteMovies: favoriteMovies.filter((id)=>id !== movieId)
                 });
                 (0, _axiosDefault.default).delete(`https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`, {
                     headers: {
@@ -41248,7 +41248,7 @@ var _movieViewScss = require("./movie-view.scss");
 var _reactRouterDom = require("react-router-dom");
 class MovieView extends (0, _reactDefault.default).Component {
     render() {
-        const { movie , onBackClick  } = this.props;
+        const { movie , onBackClick , handleFavorite  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             md: 8,
             className: "movie-view",
@@ -42233,7 +42233,7 @@ function NavBar() {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {
                 href: "#",
-                children: "My Fave Flixes!!"
+                children: "My Fave Flixes"
             }, void 0, false, {
                 fileName: "src/components/navbar/navbar.jsx",
                 lineNumber: 28,
