@@ -27259,7 +27259,7 @@ class MainView extends (0, _reactDefault.default).Component {
                                     className: "main-view"
                                 }, void 0, false, void 0, void 0);
                                 return movies.map((m)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                        md: 8,
+                                        md: 3,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                             movie: m
                                         }, void 0, false, void 0, void 0)
