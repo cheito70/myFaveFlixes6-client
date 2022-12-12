@@ -2,15 +2,13 @@ import React from 'react';
 import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export function NavBar() {
-    let user = localStorage.getItem('user');
+export function NavBar({user}) {
+  const onLoggedOut = () => {
+    localStorage.clear();
+    window.open('/', '_self');
+  }; 
 
-    const handleLogOut = (e) => {
-        e.preventDefault();
-        localStorage.clear();
-        window.open('/', '_self');
-        props.onLoggedOut(user);
-    };
+    
 
     const isAuth = () => {
         if (typeof window == 'undefined') {
@@ -24,32 +22,16 @@ export function NavBar() {
     };
 
     return (
-        <Navbar className="dark-bg w-100" bg="dark" variant="dark" expand="lg">
+        <Navbar className="dark-bg" bg="dark" variant="dark" expand="lg">
       <Navbar.Brand href="#">My Fave Flixes</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="me-auto">
-          <Link className="nav-link mr-2" to="/">
-            Movies
-          </Link>
-          {isAuth() ? (
-            <>
-              {" "}
-              <Link className="nav-link mr-2" to={`/users/${user}`}>
-                Profile
-              </Link>
-              <p className="nav-link" onClick={handleLogOut}>
-                Log Out
-              </p>
-            </>
-          ) : (
-            <>
-              {" "}
-              <Link className="nav-link" to="/register">
-                Sign Up
-              </Link>
-            </>
-          )}
+        {isAuth() && <Nav.Link href='/'>Movies</Nav.Link>}
+        {isAuth() && <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>}
+        {isAuth() && <Button onClick={onLoggedOut}>Logout</Button>}
+        {!isAuth() && <Nav.Link href='/'>Login</Nav.Link>}
+        {!isAuth() && <Nav.Link href='/register'>Sign-up</Nav.Link>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

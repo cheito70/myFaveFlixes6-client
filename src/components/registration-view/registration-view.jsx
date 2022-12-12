@@ -1,21 +1,74 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import { Navbar, Nav, Form, Button, Col, Row, CardGroup, Card, Container } from 'react-bootstrap';
 
 import './registration-view.scss';
 //import axios from 'axios';
 
 export function RegistrationView(props) {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
+  const [emailErr, setEmailErr] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(username, password, email, birthday);
-        props.onRegistration(username);
-    };
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr("Username Required");
+      isReq = false;
+    } else if (username.length < 2) {
+      setUsernameErr("Username must be 2 characters long");
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr("Password Required");
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr("Password must be 6 characters long");
+      isReq = false;
+    }
+    if (!email) {
+      setEmailErr("Email Required");
+      isReq = false;
+    } else if (email.indexOf("@") === -1) {
+      setEmailErr("Email is invalid");
+      isReq = false;
+    }
+
+    return isReq;
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //console.log(username, password, email, birthday);
+   // props.Registration(username);
+   const isReq = validate();
+   if (isReq) {
+     axios
+       .post("https://myFaveFlixes.herokuapp.com/users", {
+         Username: username,
+         Password: password,
+         Email: email,
+         Birthday: birthday,
+       })
+       .then((response) => {
+         const data = response.data;
+         console.log(data);
+         alert("Registration successful, please login!");
+         window.open("/", "_self"); //the second argument '_self' makes the page open in the current tab
+       })
+       .catch((response) => {
+         console.error(response);
+         alert("unable to register");
+       });
+   }
+  };
 
     return (
 
@@ -49,6 +102,7 @@ export function RegistrationView(props) {
                 minLength="8"
                 placeholder="Enter a Username"
                 />
+                {usernameErr && <p>{usernameErr}</p>}
             </Form.Group>
             
             <Form.Group>
@@ -60,6 +114,7 @@ export function RegistrationView(props) {
                  //required 
                  minLength="Must be 8 or more characters" 
                  />
+                 {passwordErr && <p>{passwordErr}</p>}
             </Form.Group>
             
             <Form.Group>
@@ -68,8 +123,9 @@ export function RegistrationView(props) {
                 type="email" 
                 value={email} 
                 onChange={ (e) => setEmail(e.target.value)} 
-                required 
+                placeholder="Please Enter Your Email Address"
                 />
+                {emailErr && <p>{emailErr}</p>}
             
             <Form.Label>Birthday:</Form.Label>
                 <Form.Control 
@@ -102,4 +158,9 @@ export function RegistrationView(props) {
     );
 }
 
-RegistrationView.propTypes = { onRegistration: PropTypes.func.isRequired };
+RegistrationView.propTypes = {register: PropTypes.shape({
+  Username: PropTypes.string.isRequired,
+  Password: PropTypes.string.isRequired,
+  Email: PropTypes.string.isRequired,
+}),
+};
