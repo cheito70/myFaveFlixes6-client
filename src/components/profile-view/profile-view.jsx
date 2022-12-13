@@ -179,7 +179,7 @@ export class ProfileView extends React.Component {
                             <Card.Header>User Profile</Card.Header>
                             <Card.Body>
                                 <>
-                                    <p>Name: {Username}</p>
+                                    <p>Username: {Username}</p>
                                     <p>Email: {Email}</p>
                                     <p>Birthday:{Birthday}</p>
                                 </>
