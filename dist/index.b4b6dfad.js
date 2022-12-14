@@ -41189,6 +41189,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
         const { movie , setSelectedMovie  } = this.props;
         //return <div className="movie-card" onClick={() => onMovieClick(movie)}>{movie.Title}</div>;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+            className: "movie-card m-2",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                     variant: "top",
