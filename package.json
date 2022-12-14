@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cheito70/myFaveFlixes6-client#readme",
   "dependencies": {
     "axios": "^1.2.0",
+    "everything": "npm:undefined@^",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
@@ -27,9 +28,6 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.1",
-    "buffer": "^5.7.1",
-    "parcel": "^2.8.1",
-    "process": "^0.11.10"
+    "parcel": "^2.8.1"
   }
 }
