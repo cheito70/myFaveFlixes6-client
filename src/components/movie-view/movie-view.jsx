@@ -66,7 +66,7 @@ export class MovieView extends React.Component {
                     Add to Favorite ❤ Movies
                 </Button>
                 <Button
-                    className="mt-2 mr-2 mb-2"
+                    className="mt-2 mr-2 ml-2 mb-2"
                     variant="warning"
                     onClick={() => {
                     onBackClick();
