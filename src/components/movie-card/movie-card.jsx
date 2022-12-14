@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
                     <Card.Text>{movie.Description}</Card.Text>
                 </Card.Body>
 
-                <Card.Footer class="card-footer" >
+                <Card.Footer className="card-footer m-1" >
                     <Link to={`/movies/${movie._id}`}>
                         <Button class="open-button" variant="success">Open</Button>
                     </Link>
