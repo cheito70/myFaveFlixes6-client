@@ -41327,8 +41327,9 @@ class MovieView extends (0, _reactDefault.default).Component {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        lg: 8,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "movie-poster",
+                            className: "movie-poster mt-3",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Image), {
                                 crossorigin: "anonymous",
                                 src: movie.ImagePath,
