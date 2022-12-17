@@ -17,8 +17,8 @@ export class MovieView extends React.Component {
             <div md={8} className="movie-view align-center mr-3">
                 <Row>
                     <Col bg={8}>
-                <div className="movie-poster mt-3 mr-3">
-                    <img className="align-center" crossorigin="anonymous" src={movie.ImagePath} alt="movie image" rounded />
+                <div className="movie-poster mt-4">
+                    <img className="movie-image" crossorigin="anonymous" src={movie.ImagePath} alt="movie image" rounded />
                 </div>
                     </Col>
                 </Row>
