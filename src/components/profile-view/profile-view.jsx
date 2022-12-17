@@ -263,7 +263,7 @@ export class ProfileView extends React.Component {
             </Card>
           </Col>
             </Row>
-            <Card className="favmov-inputs">
+            <Card className="fave-inputs">
           <Card.Body>
             <Row>
               <Col xs={12}>
