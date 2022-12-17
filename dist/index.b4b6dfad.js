@@ -42040,7 +42040,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                                 onClick: ()=>{
                                                     this.onRemoveFavorite(movie._id);
                                                 },
-                                                children: "Remove from the list"
+                                                children: "Remove From Faves"
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
                                                 lineNumber: 282,

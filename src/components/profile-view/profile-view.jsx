@@ -284,7 +284,7 @@ export class ProfileView extends React.Component {
                     variant="secondary"
                     onClick={()=>{this.onRemoveFavorite(movie._id)}}
                   >
-                    Remove from the list
+                    Remove From Faves
                   </Button>
                 </Col>
               ))}
