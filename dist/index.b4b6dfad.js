@@ -41244,7 +41244,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             to: `/directors/${movie.Director.Name}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 class: "director-button",
-                                variant: "link",
+                                variant: "primary",
                                 children: "Director"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
@@ -41260,7 +41260,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             to: `/genres/${movie.Genre.Name}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 class: "genre-button",
-                                variant: "link",
+                                variant: "primary",
                                 children: "Genre"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
