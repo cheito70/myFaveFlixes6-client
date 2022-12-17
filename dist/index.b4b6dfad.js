@@ -41323,13 +41323,13 @@ class MovieView extends (0, _reactDefault.default).Component {
         const { movie , onBackClick , handleFavorite  } = this.props;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             md: 8,
-            className: "movie-view align-center",
+            className: "movie-view align-center mr-3",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         bg: 8,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "movie-poster mt-3 mr-4 text-center",
+                            className: "movie-poster mt-3 mr-3",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "align-center",
                                 crossorigin: "anonymous",
