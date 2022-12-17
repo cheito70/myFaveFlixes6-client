@@ -69,7 +69,7 @@
   box-sizing: border-box;
 }
 
-.movie-view {
+.movie-view, .movie-poster, .movie-image {
   width: 500px;
 }
 
