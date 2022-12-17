@@ -41227,7 +41227,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `/movies/${movie._id}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                class: "open-button",
+                                class: "btn btn-success btn-sm float-left",
                                 variant: "success",
                                 children: "Open"
                             }, void 0, false, {
@@ -41243,7 +41243,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `/directors/${movie.Director.Name}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                class: "director-button",
+                                class: "btn btn-primary btn-sm",
                                 variant: "primary",
                                 children: "Director"
                             }, void 0, false, {
@@ -41259,7 +41259,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `/genres/${movie.Genre.Name}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                class: "genre-button",
+                                class: "btn btn-primary btn-sm float-right",
                                 variant: "primary",
                                 children: "Genre"
                             }, void 0, false, {

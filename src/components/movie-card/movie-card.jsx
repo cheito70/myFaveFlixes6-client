@@ -22,13 +22,13 @@ export class MovieCard extends React.Component {
 
                 <Card.Footer className="card-footer m-1" >
                     <Link to={`/movies/${movie._id}`}>
-                        <Button class="open-button" variant="success">Open</Button>
+                        <Button class="btn btn-success btn-sm float-left" variant="success">Open</Button>
                     </Link>
                     <Link to={`/directors/${movie.Director.Name}`}>
-                        <Button class="director-button" variant="primary">Director</Button>
+                        <Button class="btn btn-primary btn-sm" variant="primary">Director</Button>
                     </Link>
                     <Link to={`/genres/${movie.Genre.Name}`}>
-                        <Button class="genre-button" variant="primary">Genre</Button>
+                        <Button class="btn btn-primary btn-sm float-right" variant="primary">Genre</Button>
                     </Link>
 
                 </Card.Footer>
