@@ -60,7 +60,7 @@ export function LoginView(props) {
     const handleRegisterClick = (e) => {
         e.preventDefault();
         console.log("clicked Register");
-        //props.toggleRegister(false);
+        props.toggleRegister(false);
     };
 
 

@@ -40964,7 +40964,7 @@ function LoginView(props) {
     const handleRegisterClick = (e)=>{
         e.preventDefault();
         console.log("clicked Register");
-    //props.toggleRegister(false);
+        props.toggleRegister(false);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
         fluid: true,
