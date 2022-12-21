@@ -34760,12 +34760,12 @@ function RegistrationView(props) {
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                                     className: "back-button mt-2",
-                                                    variant: "primary",
+                                                    variant: "success",
                                                     type: "button",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                                         to: "/",
                                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            className: "text-muted",
+                                                            className: "text-white",
                                                             type: "button",
                                                             children: "Return To Login Page"
                                                         }, void 0, false, {

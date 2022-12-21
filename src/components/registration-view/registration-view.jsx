@@ -143,11 +143,11 @@ export function RegistrationView(props) {
             onClick={handleSubmit}>Register</Button>
           <Button
           className="back-button mt-2"
-            variant="primary"
+            variant="success"
             type="button" 
           >
             <Link to={"/"}>
-              <a className="text-muted" type="button">
+              <a className="text-white" type="button">
             Return To Login Page
               </a>
             </Link>
