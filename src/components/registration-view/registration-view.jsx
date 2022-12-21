@@ -141,12 +141,18 @@ export function RegistrationView(props) {
             variant="primary" 
             type="submit" 
             onClick={handleSubmit}>Register</Button>
-
-            <Button 
-            className="back-button mt-2"
-            variant="secondary"
+          <Button
+          className="back-button mt-2"
+            variant="primary"
             type="button" 
-            onClick={() => {onBackClick(null); }}>Return to Login Page</Button>
+          >
+            <Link to={"/"}>
+              <a className="text-muted" type="button">
+            Return To Login Page
+              </a>
+            </Link>
+          </Button>
+
             </Form>
             </Card.Body>
           </Card>
