@@ -57,11 +57,11 @@ export function LoginView(props) {
        }
     };
 
-    const handleRegisterClick = (e) => {
+    /*const handleRegisterClick = (e) => {
         e.preventDefault();
         console.log("clicked Register");
        props.toggleRegister(false);
-    };
+    };*/
 
 
     return (
@@ -107,7 +107,9 @@ export function LoginView(props) {
                                 className="register-button mt-2" 
                                 variant="secondary" 
                                 type="submit"
-                                onClick={handleRegisterClick}>Register</Button>
+                                ><Link to={"/register"}>
+                                <a className="text-white" type="button">Register
+                                </a></Link></Button>
                             </Form>
             </Card.Body>
             </Card>

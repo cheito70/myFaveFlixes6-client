@@ -34587,7 +34587,7 @@ function RegistrationView(props) {
                             className: "me-auto",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                 href: "#logout",
-                                children: "Register"
+                                children: "Register Below"
                             }, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
                                 lineNumber: 82,
@@ -40973,12 +40973,11 @@ function LoginView(props) {
             console.log("wrong username or password!!!" + err);
         });
     };
-    const handleRegisterClick = (e)=>{
+    /*const handleRegisterClick = (e) => {
         e.preventDefault();
         console.log("clicked Register");
-        props.toggleRegister(false);
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+       props.toggleRegister(false);
+    };*/ return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
         fluid: true,
         className: "login-container",
         children: [
@@ -41088,8 +41087,22 @@ function LoginView(props) {
                                                     className: "register-button mt-2",
                                                     variant: "secondary",
                                                     type: "submit",
-                                                    onClick: handleRegisterClick,
-                                                    children: "Register"
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                        to: "/register",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                            className: "text-white",
+                                                            type: "button",
+                                                            children: "Register"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/login-view/login-view.jsx",
+                                                            lineNumber: 111,
+                                                            columnNumber: 33
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/login-view/login-view.jsx",
+                                                        lineNumber: 110,
+                                                        columnNumber: 34
+                                                    }, this)
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
                                                     lineNumber: 106,
@@ -41124,7 +41137,7 @@ function LoginView(props) {
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {}, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 116,
+                        lineNumber: 118,
                         columnNumber: 13
                     }, this)
                 ]
@@ -41144,18 +41157,18 @@ function LoginView(props) {
                             children: "Click here to register a new account."
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 121,
+                            lineNumber: 123,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 119,
+                    lineNumber: 121,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 118,
+                lineNumber: 120,
                 columnNumber: 9
             }, this)
         ]

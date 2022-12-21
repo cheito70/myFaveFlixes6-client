@@ -79,7 +79,7 @@ export function RegistrationView(props) {
          <Container fluid>
           <Navbar.Brand href="#home">My Fave Flixes</Navbar.Brand>
           <Nav className="me-auto">
-           <Nav.Link href="#logout">Register</Nav.Link>
+           <Nav.Link href="#logout">Register Below</Nav.Link>
           </Nav>
          </Container>
         </Navbar>
