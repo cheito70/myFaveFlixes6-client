@@ -23,7 +23,7 @@ export function NavBar({user}) {
 
     return (
         <Navbar className="dark-bg" bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#">My Fave Flixes</Navbar.Brand>
+      <Navbar.Brand href="#">My Fave Flixessss</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
         <Nav className="me-auto">
