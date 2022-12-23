@@ -14,6 +14,23 @@ In this view, a registered user can log into the app to access their profile and
 # Registration View
 In this view, if a user has not registered, he/she will be able to fill out a form in order to register.
 
+# Main View
+This view returns a list of ALL movies in the database to the user. They are displayed in movie-card tiles and the user is able to select a movie and add it to their favorite movie list.
+
+# Movie View
+Once the user selects a movie from the Main View, the movie view displays the selected movie as well as information about the movie.
+
+# Director View
+
+This view is accessed through the movie view inform the user about the director of the movie in movie view.
+
+# Genre View
+This view is accessed through the movie view inform the user about the genre of the movie in movie view.
+
+# Profile View
+This is the profile user area where a user can update their information as well as delete favorite movies if needed.
+
+
 Techstack (on the client side): REACT, HTML, CSS, SCSS. JS, and JSX . Using Parcel as the transpiler.
 
 Using REACT to render various components described in the index.jsx file. 
