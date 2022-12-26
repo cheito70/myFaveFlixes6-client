@@ -292,3 +292,4 @@ handleFavorite = (movieId, action) => {
 
 }
 
+export default MainView
