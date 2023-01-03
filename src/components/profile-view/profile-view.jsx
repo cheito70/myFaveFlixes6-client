@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
-import moment from 'moment';
+//import moment from 'moment';
 
 //Bootstrap imports
 import {Form, Button, Container, Row, Col, Card, Figure } from 'react-bootstrap';
