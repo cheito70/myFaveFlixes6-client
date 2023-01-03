@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+
 
 import PropTypes from 'prop-types';
 
@@ -44,12 +46,6 @@ export class MainView extends React.Component {
         }
     }
 
-/*setSelectedMovie(movie) {
-    this.setState({
-        selectedMovie: movie,
-    });
-}*/
-
 //Function updates 'user' property in state to particular user if logged in properly
 onLoggedIn(authData) {
     console.log(authData);
@@ -76,9 +72,7 @@ getMovies(token) {
     })
     .then((response) => {
         //Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
+        this.props.setMovies(response.data);
     })
     .catch(function (error) {
         console.log(error);
@@ -92,53 +86,11 @@ onRegistration(registered) {
     });
 }
 
-/*handleFavorite = (movieId, action) => {
-    const { user, favoriteMovies } = this.state;
-    const accessToken = localStorage.getItem('token');
-    const username = user;
-    if (accessToken !== null && username !== null) {
-        //Add movieID to favorites (local state and server)
-        if (action === 'add') {
-            this.setState({ favoriteMovies: [...favoriteMovies, movieId] });
-            axios.put(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
-                {},
-                {
-                    headers: { Authorization: `Bearer ${accessToken}` },
-                }
-            )
-            .then((res) => {
-                console.log(`Movie added to ${username} Favorite movies`);
-                alert(`Movie added to ${username} Favorite movies`);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-
-        } else if (action === 'remove') {
-            this.setState({
-                favoriteMovies: favoriteMovies.filter((id) => id !== movieId),
-            });
-            axios.delete(
-                `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movieId}`,
-                {
-                    headers: { Authorization: `Bearer ${accessToken}` },
-                }
-            )
-            .then((res) => {
-                console.log(`Movie removed from ${username} Favorite Movies`);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        }
-    }
-};*/
 
     render() {
-        const { movies, user, favoriteMovies } = this.state;
-        //let { movies } = this.props;
-        //let { user } = this.state;
+        //const { movies, user, favoriteMovies } = this.state;
+        let { movies } = this.props;
+        let { user } = this.state;
         return (
             <Router>
              <NavBar user={user} />
@@ -290,4 +242,4 @@ let mapStateToProps = (state) => {
   return { movies: state.movies };
 };
 
-//export default (mapStateToProps)(MainView);
+export default connect(mapStateToProps, { setMovies})(MainView);
