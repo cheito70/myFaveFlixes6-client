@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from "axios";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import moment from 'moment';
 
 //Bootstrap imports
 import {Form, Button, Container, Row, Col, Card, Figure } from 'react-bootstrap';
+import './profile-view.scss';
+import { connect } from 'react-redux';
+import { setUser, setMovies } from '../../actions/actions';
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -20,8 +22,8 @@ export class ProfileView extends React.Component {
     }
 
     componentDidMount() {
-        const accessToken = localStorage.getItem('token');
-        this.getUser(accessToken);
+        this.getUser();
+        console.log("this.props", this.props);
     }
 
     onRemoveFavorite = (movie) => {
@@ -160,8 +162,8 @@ export class ProfileView extends React.Component {
         alert('works')
     }
     render() {
-        const { movies} = this.props;
-        const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
+        const { movies, user} = this.props;
+        const { FavoriteMovies, Username, Email, Birthday } = this.state;
 
         const myFavoriteMovies = [];
         for (let index = 0; index < movies.length; index++) {
@@ -293,8 +295,14 @@ export class ProfileView extends React.Component {
         </Card>
     </Container>
      );
-
   }
-
-
 }
+
+let mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    movies: state.movies,
+  };
+};
+
+export default connect(mapStateToProps, { setUser, setMovies})(ProfileView);
