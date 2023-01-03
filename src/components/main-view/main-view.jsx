@@ -147,15 +147,15 @@ onRegistration(registered) {
                   path='/'
                   render={() => {
                     if (!user)
-                     return (
+                     return 
                         <Col>
                         <LoginView
                          md={4}
-                         movies={movies}
-                         onLoggedIn={(user) => this.onLoggedIn(user)}
+                         //movies={movies}
+                         onLoggedIn={user => this.onLoggedIn(user)}
                          />
                         </Col>
-                     );
+                     //Before movies upload
                      if (movies.length === 0) return <div className='main-view' />;
                      return <MoviesList movies={movies} />;
                   }}
