@@ -14,6 +14,8 @@ import { ProfileView } from '../profile-view/profile-view';
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { NavBar } from '../navbar/navbar';
+import MoviesList from '../movies-list/movies-list';
+
 
 //Styles
 import { Navbar, Nav, Container, Row, Col, Button} from 'react-bootstrap';
@@ -24,11 +26,11 @@ export class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
-            movies: [],
+            //movies: [],
             favoriteMovies: [],
-            selectedMovie: null,
+            //selectedMovie: null,
             user: null,
-            registered: null
+            //registered: null
         };
     }
 
@@ -42,11 +44,11 @@ export class MainView extends React.Component {
         }
     }
 
-setSelectedMovie(movie) {
+/*setSelectedMovie(movie) {
     this.setState({
         selectedMovie: movie,
     });
-}
+}*/
 
 //Function updates 'user' property in state to particular user if logged in properly
 onLoggedIn(authData) {
@@ -72,11 +74,9 @@ getMovies(token) {
     axios.get ('https://myfaveflixes.herokuapp.com/movies', {
         headers: { Authorization: `Bearer ${token}` }
     })
-    .then(response => {
+    .then((response) => {
         //Assign the result to the state
-        this.setState({
-            movies: response.data
-        });
+        this.props.setMovies(response.data);
     })
     .catch(function (error) {
         console.log(error);
@@ -90,7 +90,7 @@ onRegistration(registered) {
     });
 }
 
-handleFavorite = (movieId, action) => {
+/*handleFavorite = (movieId, action) => {
     const { user, favoriteMovies } = this.state;
     const accessToken = localStorage.getItem('token');
     const username = user;
@@ -131,10 +131,12 @@ handleFavorite = (movieId, action) => {
             });
         }
     }
-};
+};*/
 
     render() {
-        const { movies, user, favoriteMovies } = this.state;
+        //const { movies, user, favoriteMovies } = this.state;
+        let { movies } = this.props;
+        let { user } = this.state;
         return (
             <Router>
              <NavBar user={user} />
@@ -149,16 +151,13 @@ handleFavorite = (movieId, action) => {
                         <Col>
                         <LoginView
                          md={4}
+                         movies={movies}
                          onLoggedIn={(user) => this.onLoggedIn(user)}
                          />
                         </Col>
                      );
                      if (movies.length === 0) return <div className='main-view' />;
-                     return movies.map((m) => (
-                        <Col md={3} key={m._id}>
-                         <MovieCard movie={m} />
-                        </Col>
-                     ));
+                     return <MoviesList movies={movies} />;
                   }}
                   />
 
@@ -178,6 +177,7 @@ handleFavorite = (movieId, action) => {
                  />
 
              <Route
+                 exact
                  path={`/users/${user}`}
                  render={({ history }) => {
                    if (!user) return <Redirect to="/" />;
@@ -188,7 +188,7 @@ handleFavorite = (movieId, action) => {
                          movies={movies}
                          goBack={history.goBack}
                          favoriteMovies={favoriteMovies || []}
-                         handleFavorite={this.handleFavorite}
+                         //handleFavorite={this.handleFavorite}
                          onBackClick={() => history.goBack()}
                        />
                      </Col>
@@ -212,25 +212,17 @@ handleFavorite = (movieId, action) => {
              />
 
          <Route
+             exact
              path="/movies/:movieId"
              render={({ match, history }) => {
-               // console.log("movies route user", user);
-               if (!user)
-                 return (
-                   <Col>
-                     <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                   </Col>
-                 );
-               if (movies.length === 0) return <div className="main-view" />;
                return (
-                 <Col md={8}>
-                   <MovieView
-                     movie={movies.find((m) => m._id === match.params.movieId)}
-                     onBackClick={() => history.goBack()}
-                     handleFavorite={this.handleFavorite}
-                   />
-                 </Col>
-               );
+                <Col className='pt-4'>
+                  <MovieView
+                    movie={movies.find((m) => m._id === match.params.movieId)}
+                    onBackClick={() => history.goBack()}
+                    />
+                </Col>
+               );       
              }}
            />     
 
@@ -291,5 +283,8 @@ handleFavorite = (movieId, action) => {
     }
 
 }
+let mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
 
-export default MainView
+export default connect (mapStateToProps)(MainView);
