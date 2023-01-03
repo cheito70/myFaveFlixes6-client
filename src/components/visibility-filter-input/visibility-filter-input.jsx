@@ -12,4 +12,4 @@ function VisibilityFilterInput(props) {
     );
 }
 
-export default connect(null)(VisibilityFilterInput);
+export default VisibilityFilterInput;
