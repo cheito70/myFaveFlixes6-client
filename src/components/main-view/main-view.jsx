@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { setMovies } from '../../actions/actions';
 
 
 import PropTypes from 'prop-types';
