@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Button, Image } from 'react-bootstrap';
+import axios from 'axios';
 
 import './movie-view.scss';
 
@@ -8,9 +9,28 @@ import { Link } from 'react-router-dom';
 
 
 export class MovieView extends React.Component {
+    addMovieToFavorites(e) {
+        const { movie } = this.props;
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+
+        e.preventDefault();
+        axios.post(
+            `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movie._id}`,
+            { username: localStorage.getItem("user")},
+            {
+                headers: {Authorization: `Bearer ${token}` }
+            }
+        )
+        .then((response) => {
+            console.log(response);
+            alert("Movie added");
+        })
+        .catch((error) => console.error(error));
+    }
 
     render() {
-        const { movie, onBackClick, handleFavorite } = this.props;
+        const { movie, onBackClick } = this.props;
 
 
         return (            
@@ -61,7 +81,7 @@ export class MovieView extends React.Component {
                 <Button
                     className="my-4 ml-2"
                     variant="outline-primary"
-                    onClick={() => handleFavorite(movie._id, "add")}
+                    onClick={(e) => this.addMovieToFavorites(e)}
                 >
                     Add to Favorite ❤ Movies
                 </Button>
