@@ -74,9 +74,11 @@ getMovies(token) {
     axios.get ('https://myfaveflixes.herokuapp.com/movies', {
         headers: { Authorization: `Bearer ${token}` }
     })
-    .then(response => {
+    .then((response) => {
         //Assign the result to the state
-        this.props.setMovies(response.data);
+        this.setState({
+          movies: response.data
+        });
     })
     .catch(function (error) {
         console.log(error);
