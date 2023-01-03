@@ -289,4 +289,4 @@ let mapStateToProps = (state) => {
   return { movies: state.movies };
 };
 
-export default (mapStateToProps)(MainView);
+//export default (mapStateToProps)(MainView);
