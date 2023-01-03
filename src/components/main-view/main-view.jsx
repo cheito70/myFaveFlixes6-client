@@ -153,7 +153,7 @@ onRegistration(registered) {
                         <Col>
                         <LoginView
                          md={4}
-                         //movies={movies}
+                         movies={movies}
                          onLoggedIn={user => this.onLoggedIn(user)}
                          />
                         </Col>
