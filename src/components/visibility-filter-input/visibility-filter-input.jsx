@@ -1,0 +1,15 @@
+import React from 'react';
+import Form from 'react-bootstrap/Form';
+import { connect } from 'react-redux';
+
+function VisibilityFilterInput(props) {
+    return (
+        <Form.Control
+        onChange={(e) => props.setFilter(e.target.value)}
+        value={props.visibilityFilter}
+        placeholder='Search'
+        />
+    );
+}
+
+export default connect(null)(VisibilityFilterInput);
