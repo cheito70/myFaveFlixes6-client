@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 
 function VisibilityFilterInput(props) {
     return (
