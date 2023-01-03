@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { setFilter } from '../../actions/actions';
+
 
 function VisibilityFilterInput(props) {
     return (
@@ -12,4 +14,4 @@ function VisibilityFilterInput(props) {
     );
 }
 
-export default VisibilityFilterInput;
+export default connect(null, { setFilter })(VisibilityFilterInput);
