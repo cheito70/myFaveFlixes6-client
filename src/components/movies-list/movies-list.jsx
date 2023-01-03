@@ -35,4 +35,3 @@ function MoviesList(props) {
     );
 }
 
-export default (mapStateToProps)(MoviesList);
