@@ -9,7 +9,7 @@ import { Link, Route } from "react-router-dom";
 
 export class MovieCard extends React.Component {
     render() {
-        const { movie, setSelectedMovie } = this.props;
+        const { movie } = this.props;
 
         //return <div className="movie-card" onClick={() => onMovieClick(movie)}>{movie.Title}</div>;
         return (
