@@ -29,7 +29,7 @@ export class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
-            movies: [],
+            //movies: [],
             //favoriteMovies: [],
             //selectedMovie: null,
             user: null,
