@@ -30,10 +30,10 @@ export class MainView extends React.Component {
         super();
         this.state = {
             movies: [],
-            favoriteMovies: [],
+            //favoriteMovies: [],
             //selectedMovie: null,
             user: null,
-            registered: null
+            //registered: null
         };
     }
 
