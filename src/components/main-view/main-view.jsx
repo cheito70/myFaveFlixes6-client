@@ -89,9 +89,9 @@ onRegistration(registered) {
 
 
     render() {
-        //const { movies, user, favoriteMovies } = this.state;
-        let { movies } = this.props;
-        let { user } = this.state;
+        const { movies, user, favoriteMovies } = this.state;
+        //let { movies } = this.props;
+        //let { user } = this.state;
         return (
             <Router>
              <NavBar user={user} />
