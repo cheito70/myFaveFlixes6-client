@@ -53,6 +53,7 @@ export function LoginView(props) {
         })
         .catch((err) => {
             console.log('wrong username or password!!!' + err);
+            alert('no such user');
         });
        }
     };
