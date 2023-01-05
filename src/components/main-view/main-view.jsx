@@ -133,7 +133,7 @@ onRegistration(registered) {
                  />
 
              <Route
-                 exact
+                 //exact
                  path={`/users/${user}`}
                  render={({ history }) => {
                    if (!user) return <Redirect to="/" />;
