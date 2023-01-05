@@ -143,7 +143,7 @@ onRegistration(registered) {
                          user={user}
                          movies={movies}
                          goBack={history.goBack}
-                         favoriteMovies={favoriteMovies || []}
+                         //favoriteMovies={favoriteMovies || []}
                          //handleFavorite={this.handleFavorite}
                          onBackClick={() => history.goBack()}
                        />
