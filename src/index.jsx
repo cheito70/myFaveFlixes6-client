@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
+import moviesApp from './reducers/reducers';
 
 //import { createRoot } from "react-dom/client";
 import { MainView } from './components/main-view/main-view';
