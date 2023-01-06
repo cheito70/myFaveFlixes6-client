@@ -172,7 +172,7 @@ onRegistration(registered) {
              path="/movies/:movieId"
              render={({ match, history }) => {
                return (
-                <Col className='pt-4'>
+                <Col className='pt-4' md={8}>
                   <MovieView
                     movie={movies.find((m) => m._id === match.params.movieId)}
                     onBackClick={() => history.goBack()}
