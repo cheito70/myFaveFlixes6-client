@@ -6,13 +6,15 @@ import { setFilter } from '../../actions/actions';
 
 function VisibilityFilterInput(props) {
     return (
-        <Col md={8} class="d-flex justify-content-center">
+        <div>
+        <Col md={8} >
         <Form.Control
         onChange={(e) => props.setFilter(e.target.value)}
         value={props.visibilityFilter}
         placeholder='Search'
         />
         </Col>
+        </div>
     );
 }
 
