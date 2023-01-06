@@ -15,7 +15,7 @@ export class MovieView extends React.Component {
         const token = localStorage.getItem('token');
 
         e.preventDefault();
-        axios.post(
+        axios.put(
             `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movie._id}`,
             { username: localStorage.getItem("user")},
             {
