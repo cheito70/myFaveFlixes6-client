@@ -19,7 +19,7 @@ export class MovieView extends React.Component {
             `https://myfaveflixes.herokuapp.com/users/${username}/movies/${movie._id}`,
             { username: localStorage.getItem("user")},
             {
-                headers: {Authorization: `Bearer ${token}` }
+                headers: { Authorization: `Bearer ${token}` }
             }
         )
         .then((response) => {
