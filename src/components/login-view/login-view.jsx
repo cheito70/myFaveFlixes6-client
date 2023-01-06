@@ -75,7 +75,7 @@ export function LoginView(props) {
                 <CardGroup>
                     <Card>
                         <Card.Body>
-                            <Card.Title>Login Here</Card.Title>
+                            <Card.Title className="justify-cpntent-center">Login Here</Card.Title>
                             <Form className="login-border">
                                 <Form.Group controlId="formUsername">
                                     <Form.Label>Username:</Form.Label>
