@@ -1,16 +1,18 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+import { Form, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { setFilter } from '../../actions/actions';
 
 
 function VisibilityFilterInput(props) {
     return (
+        <Col>
         <Form.Control
         onChange={(e) => props.setFilter(e.target.value)}
         value={props.visibilityFilter}
         placeholder='Search'
         />
+        </Col>
     );
 }
 
