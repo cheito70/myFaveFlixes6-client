@@ -288,7 +288,7 @@ export class ProfileView extends React.Component {
                   </Figure>
                   <Button
                     className="remove"
-                    variant="warning"
+                    variant="danger"
                     onClick={()=>{this.onRemoveFavorite(movie._id)}}
                   >
                     Remove From Faves
