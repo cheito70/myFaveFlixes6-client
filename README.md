@@ -31,6 +31,9 @@ This view is accessed through the movie view inform the user about the genre of 
 This is the profile user area where a user can update their information as well as delete favorite movies if needed.
 
 
+# Endpoints
+# Get A List of Movies
+
 Techstack (on the client side): REACT, HTML, CSS, SCSS. JS, and JSX . Using Parcel as the transpiler.
 
 Using REACT to render various components described in the index.jsx file. 
