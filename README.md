@@ -34,6 +34,23 @@ This is the profile user area where a user can update their information as well 
 # Endpoints
 # Get A List of Movies
 
+# Get Details About a Single Movie
+
+# Get Info About a Specific Genre
+
+# Get Info About a Specific Director by Name
+
+# Get a List of All Users
+
+# Get a User by Username
+
+# Add a New User
+
+# Delete a Current User
+
+# Update a Current User
+
+
 Techstack (on the client side): REACT, HTML, CSS, SCSS. JS, and JSX . Using Parcel as the transpiler.
 
 Using REACT to render various components described in the index.jsx file. 
